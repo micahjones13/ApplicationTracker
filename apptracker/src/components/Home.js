@@ -15,10 +15,26 @@ const Home = props => {
         console.log(err, "err");
       });
   }, []);
+
+  function remove(id) {
+    axios.delete(`http://localhost:5500/companies/${id}`);
+    // console.log(id);
+    console.log(`http://localhost:5500/companies/${id}`);
+
+    // axios
+    //   .get("http://localhost:5500/companies")
+    //   .then(res => {
+    //     console.log(res, "res");
+    //     setData({ companies: res.data });
+    //   })
+    //   .catch(err => {
+    //     console.log(err, "err");
+    //   });
+  }
   return (
     <div>
       <h1>Application Tracker</h1>
-      <Table data={data} />
+      <Table data={data} remove={remove} />
       <button>Add Application</button>
     </div>
   );

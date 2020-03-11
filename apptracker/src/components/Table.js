@@ -15,7 +15,7 @@ const Table = props => {
         </tr>
 
         {props.data.companies.map(item => {
-          return <Cell item={item} />;
+          return <Cell item={item} remove={props.remove} />;
         })}
       </table>
     </div>
